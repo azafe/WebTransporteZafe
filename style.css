@@ -392,3 +392,234 @@ body {
     padding-top: 3rem;
   }
 }
+
+
+/* ORGANIGRAMA GRÁFICO */
+.org-level {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.org-three {
+  justify-content: space-between;
+}
+
+.org-multi {
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.org-person {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.2rem;
+  width: 200px;
+  text-align: center;
+  border: 1px solid #ddd;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.org-person img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  border: 2px solid #e42020;
+}
+
+.org-person h3, .org-person h4 {
+  margin-top: 0.3rem;
+}
+
+.org-person .role {
+  font-size: 0.8rem;
+  color: #e42020;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Líneas del organigrama */
+.org-line {
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+  margin: 1.5rem 0;
+}
+
+
+/* ==========================================
+   ORGANIGRAMA – ESTILO NUEVO
+   ========================================== */
+
+.org-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.3rem 1.2rem;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+  margin-bottom: 2rem;
+}
+
+.org-card.board {
+  text-align: center;
+}
+
+.org-desc {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+/* GRID DE PERSONAS */
+.org-people {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .org-people {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.person {
+  text-align: center;
+}
+
+.person img {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e42020;
+  margin-bottom: 0.4rem;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.role {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* AREAS */
+.area-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .area-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.area-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.leader {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.leader img {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 2px solid #e42020;
+  object-fit: cover;
+}
+
+.area-desc {
+  font-size: 0.86rem;
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+.sub {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.area-list {
+  list-style: disc;
+  padding-left: 1.2rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.area-list li + li {
+  margin-top: 0.3rem;
+}
+
+/* FUNCIONES EN DESARROLLO */
+.future {
+  margin-top: 1rem;
+}
+
+.future-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 650px) {
+  .future-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.future-card {
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid #e5e5e5;
+}
+
+.future-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.future-card p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+
+/* =====================================================
+   JUNTA DIRECTIVA – FORMATO SIN PERSONAS
+   ===================================================== */
+.board-clean {
+  background: #ffffff;              /* tono suave distinto al resto */
+  border: 1px solid #ffffff;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+}
+
+.board-clean h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.board-clean .org-desc {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
