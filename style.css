@@ -365,10 +365,27 @@ body {
   color: #777;
 }
 
-/* RESPONSIVE */
 @media (max-width: 640px) {
+  .header-content {
+    flex-wrap: wrap;
+    gap: 0.5rem 0;
+    height: auto;
+    padding: 0.5rem 0;
+  }
+
   .nav {
-    display: none; /* más adelante se puede hacer menú móvil */
+    display: flex;              /* que se vea */
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .nav a {
+    flex: 1 1 auto;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.4rem;
   }
 
   .hero {
