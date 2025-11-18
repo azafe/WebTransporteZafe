@@ -824,6 +824,9 @@ body {
   white-space: nowrap;
   padding: 0.6rem 0;
   scrollbar-width: none; /* Firefox */
+
+  /* 👇 clave para que NO salte de línea */
+  flex-wrap: nowrap;
 }
 
 .scroll-nav::-webkit-scrollbar {
@@ -838,7 +841,7 @@ body {
   background: #f4f4f4;
   color: #333;
   border: 1px solid #e5e5e5;
-  flex-shrink: 0;
+  flex-shrink: 0;          /* 👈 cada botón mantiene su tamaño y se desplaza */
 }
 
 .scroll-nav a.active {
@@ -847,11 +850,12 @@ body {
   border-color: #d00000;
 }
 
-/* Desktop: se comporta como menú normal */
+/* Desktop */
 @media (min-width: 760px) {
   .scroll-nav {
     overflow-x: visible;
     white-space: normal;
+    flex-wrap: nowrap;
     justify-content: flex-end;
   }
 
