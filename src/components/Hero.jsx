@@ -7,6 +7,7 @@ export default function Hero() {
 
   return (
     <section id="inicio" className="hero" style={{
+      // Mantenemos el degradado oscuro sobre la imagen
       backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url('/img/heroimage.jpg')`
     }}>
       <div className="container">
@@ -21,7 +22,8 @@ export default function Hero() {
             className="btn btn-primary" 
             style={{fontSize: '1.1rem', padding: '15px 30px'}}
           >
-            Solicitar Presupuesto
+            {/* CAMBIO DE TEXTO AQUÍ */}
+            Contactar
           </a>
         </div>
       </div>
