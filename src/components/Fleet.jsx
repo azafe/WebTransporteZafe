@@ -69,15 +69,16 @@ export default function Fleet() {
         <div className="fleet-grid">
           {fleetData[activeTab].map(item => (
             <div key={item.id} className="fleet-card">
-              <div style={{height: '250px', overflow: 'hidden'}}>
+              {/* Usamos clases CSS en lugar de estilos fijos */}
+              <div className="fleet-img-container">
                 <img 
                   src={item.image} 
                   alt={item.title} 
-                  style={{width: '100%', height: '100%', objectFit: 'cover'}}
+                  className="fleet-img"
                   onError={(e) => {e.target.style.display='none'}} 
                 />
               </div>
-              <div className="fleet-info">
+              <div className="fleet-info" style={{padding: '20px'}}>
                 <h3 style={{marginBottom: '10px', fontSize: '1.2rem'}}>{item.title}</h3>
                 <p style={{color: '#666'}}>{item.desc}</p>
               </div>
