@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Hero() {
-  // Configuramos el mismo enlace de WhatsApp
   const mensaje = "Hola, necesito una cotización de transporte.";
   const telefono = "5493815074390";
   const whatsappUrl = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
@@ -20,9 +19,9 @@ export default function Hero() {
             target="_blank" 
             rel="noopener noreferrer"
             className="btn btn-primary" 
-            style={{fontSize: '1.2rem', padding: '15px 40px'}}
+            style={{fontSize: '1.1rem', padding: '15px 30px'}}
           >
-            Solicitar Presupuesto por WhatsApp
+            Solicitar Presupuesto
           </a>
         </div>
       </div>
