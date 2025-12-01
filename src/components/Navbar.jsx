@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className="logo">
           <img src="/img/logo.jpg" alt="TZ" style={{height: '40px', objectFit: 'contain'}} onError={(e) => e.target.style.display='none'}/>
           <span style={{display: 'flex', alignItems: 'center', gap: '5px'}}>
-             {!document.querySelector('img[src="/img/logo.jpg"]')?.complete && <Truck size={28} color="#eab308" />}
+             {!document.querySelector('img[src="/img/logo.jpg"]')}
              <span className="logo-text">TRANSPORTE ZAFE</span>
           </span>
         </div>

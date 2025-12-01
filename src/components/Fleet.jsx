@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import FleetCard from './FleetCard'; // Importamos el componente nuevo
 
 export default function Fleet() {
   const [activeTab, setActiveTab] = useState('camiones');
@@ -18,11 +19,10 @@ export default function Fleet() {
     ]
   };
 
-  // Función para mover el carrusel con las flechas
   const scroll = (direction) => {
     if (scrollRef.current) {
       const { current } = scrollRef;
-      const scrollAmount = 300; // Cuántos pixeles mueve cada click
+      const scrollAmount = 300;
       if (direction === 'left') {
         current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       } else {
@@ -36,7 +36,6 @@ export default function Fleet() {
       <div className="container">
         <h2 className="section-title">Nuestra Flota</h2>
         
-        {/* Pestañas */}
         <div className="tabs">
           <button 
             className={`btn tab-btn ${activeTab === 'camiones' ? 'active' : ''}`}
@@ -52,42 +51,29 @@ export default function Fleet() {
           </button>
         </div>
 
-        {/* Contenedor del Carrusel */}
         <div className="carousel-wrapper">
-          {/* Botón Izquierda (Solo visible en Desktop) */}
           <button className="carousel-btn prev" onClick={() => scroll('left')}>
             <ChevronLeft size={24} />
           </button>
 
-          {/* Lista de Tarjetas (Scrollable) */}
           <div className="carousel-container" ref={scrollRef}>
             {fleetData[activeTab].map(item => (
               <div key={item.id} className="carousel-item">
-                <div className="fleet-card">
-                  <div className="fleet-img-container">
-                    <img 
-                      src={item.image} 
-                      alt={item.title} 
-                      className="fleet-img"
-                      onError={(e) => {e.target.style.display='none'}} 
-                    />
-                  </div>
-                  <div className="fleet-info" style={{padding: '20px'}}>
-                    <h3 style={{marginBottom: '10px', fontSize: '1.2rem'}}>{item.title}</h3>
-                    <p style={{color: '#666'}}>{item.desc}</p>
-                  </div>
-                </div>
+                {/* Aquí usamos el nuevo componente para TODOS los ítems */}
+                <FleetCard 
+                  image={item.image} 
+                  title={item.title} 
+                  desc={item.desc} 
+                />
               </div>
             ))}
           </div>
 
-          {/* Botón Derecha (Solo visible en Desktop) */}
           <button className="carousel-btn next" onClick={() => scroll('right')}>
             <ChevronRight size={24} />
           </button>
         </div>
         
-        {/* Indicador visual para móvil */}
         <p style={{textAlign: 'center', marginTop: '10px', fontSize: '0.9rem', color: '#999', display: 'block', md: 'none'}}>
           Desliza para ver más ↔
         </p>
