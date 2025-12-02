@@ -3,19 +3,24 @@ import './Hero.css';
 
 const Hero = () => {
   return (
-    <section 
-      className="hero" 
-      style={{ backgroundImage: "url('/img/heroimage.jpg')" }}
-    >
+    <section className="hero">
+      {/* Fondo con el gradiente integrado en CSS */}
+      <div className="hero-background"></div>
+
       <div className="hero-content">
+        <span className="hero-tag">Logística Profesional</span>
+        
         <h1 className="hero-title">
-          SOLUCIONES LOGÍSTICAS <br /> DE TUCUMÁN AL PAÍS
+          CONECTAMOS EL NORTE <br />
+          CON <span className="hero-highlight">TODO EL PAÍS</span>
         </h1>
+        
         <p className="hero-subtitle">
-          15 años conectando el desarrollo del Norte Argentino con seguridad y eficiencia.
+          Más de 15 años brindando soluciones de transporte seguras y eficientes para las industrias líderes de Tucumán.
         </p>
+        
         <a href="#contacto" className="hero-btn">
-          Cotizar Ahora
+          Solicitar Cotización <span>→</span>
         </a>
       </div>
     </section>
