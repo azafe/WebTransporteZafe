@@ -1,52 +1,134 @@
-/* Sección de Clientes */
+/* Sección de Experiencia / Clientes */
 .clients-section {
-  padding: 4rem 1rem;
-  background-color: #f8f9fa;
+  padding: 5rem 1rem;
+  background-color: #f4f4f4; /* Gris apenas más oscuro para contraste */
+}
+
+.clients-container {
+  max-width: 1000px; /* Ancho contenido para lectura cómoda */
+  margin: 0 auto;
+}
+
+.clients-header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .clients-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.clients-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Grilla de Experiencia */
+.experience-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Espacio entre tarjetas */
+}
+
+/* Tarjeta individual (estilo CV) */
+.experience-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #FFC107; /* Borde amarillo de marca */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.experience-card:hover {
+  transform: translateX(10px); /* Se mueve un poco a la derecha al pasar el mouse */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Columna del Logo */
+.card-logo-box {
+  flex: 0 0 120px; /* Ancho fijo para el logo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-logo {
+  width: 100%;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%); /* Elegante en grises */
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+
+.experience-card:hover .card-logo {
+  filter: grayscale(0%); /* A color cuando pasas el mouse */
+  opacity: 1;
+}
+
+/* Columna de Texto */
+.card-content {
+  flex: 1;
+}
+
+.card-client-name {
+  font-size: 1.4rem;
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 0.5rem;
 }
 
-.clients-subtitle {
-  color: #666;
-  margin-bottom: 3rem;
-  font-size: 1.1rem;
+.card-tasks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.clients-grid {
+.card-tasks li {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.4rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 3rem;
+  align-items: flex-start;
+  gap: 10px;
 }
 
-.client-logo {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: all 0.3s ease;
-  cursor: pointer;
+/* Flechita amarilla para cada tarea */
+.card-tasks li::before {
+  content: '➤';
+  color: #FFC107;
+  font-size: 0.8rem;
+  margin-top: 3px;
 }
 
-.client-logo:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.1);
-}
-
+/* Responsive para celular */
 @media (max-width: 768px) {
-  .clients-grid {
-    gap: 2rem;
+  .experience-card {
+    flex-direction: column; /* Uno arriba del otro */
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
   }
-  .client-logo {
-    height: 45px;
+  
+  .experience-card:hover {
+    transform: translateY(-5px); /* En celular se mueve hacia arriba */
+  }
+
+  .card-logo-box {
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-tasks li {
+    justify-content: center; /* Centrado en celular */
   }
 }
