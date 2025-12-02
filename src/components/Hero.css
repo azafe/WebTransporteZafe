@@ -95,7 +95,7 @@
   }
   
   .hero-background {
-    background-position: center;
+    background-position: left center;
     /* En celular el degradado va de abajo hacia arriba */
     background-image: 
       linear-gradient(0deg, 
