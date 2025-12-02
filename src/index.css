@@ -117,3 +117,70 @@ body { overflow-x: hidden; width: 100%; }
   .hero { min-height: 70vh; }
   .whatsapp-float { width: 50px; height: 50px; bottom: 20px; right: 20px; }
 }
+
+/* =========================================
+   ESTILOS DEL MENÚ MÓVIL MEJORADO
+   ========================================= */
+
+/* 1. El contenedor principal del menú desplegado */
+.mobile-menu {
+  /* Aseguramos que el contenedor base esté oculto y no moleste */
+  display: none; 
+  /* Color de fondo oscuro (usando el tono de tu footer/hero) */
+  background-color: #1a1a2e; /* Puedes ajustar este hex si usas otro en el footer */
+  
+  /* Posicionamiento para cubrir la pantalla */
+  position: fixed;
+  top: 60px; /* Ajusta esto a la altura exacta de tu barra de navegación */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px); /* Altura total menos la barra */
+  z-index: 998; /* Justo debajo del botón hamburguesa */
+  
+  /* Flexbox para centrar todo el contenido */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Espacio entre cada enlace */
+  
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Cuando el menú está abierto (clase 'open') */
+.mobile-menu.open {
+  display: flex; /* Se muestra usando flexbox */
+}
+
+/* 2. Estilo de los enlaces (Inicio, Nosotros, etc.) */
+.mobile-menu a {
+  text-decoration: none !important; /* QUITA EL SUBRAYADO AZUL */
+  color: #ffffff !important; /* Texto Blanco */
+  font-size: 1.5rem; /* Letra más grande para tocar fácil en celular */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+/* Efecto al tocar/pasar el mouse por el enlace */
+.mobile-menu a:hover {
+  color: #FFC107 !important; /* Se vuelve amarillo al tocar */
+}
+
+/* 3. Estilo específico para el botón de "Contactar" dentro del menú móvil */
+/* Asumiendo que tiene una clase como .btn-primary o similar */
+.mobile-menu a.btn-primary,
+.mobile-menu button.btn-primary {
+    background-color: #FFC107 !important;
+    color: #1a1a1a !important; /* Texto oscuro sobre fondo amarillo */
+    padding: 1rem 2.5rem;
+    border-radius: 50px; /* Bordes redondeados modernos */
+    font-weight: 700;
+    margin-top: 1rem; /* Un poco más de espacio arriba del botón */
+}
+
+.mobile-menu a.btn-primary:hover {
+    background-color: #e0a800 !important; /* Amarillo un poco más oscuro al tocar */
+    color: #1a1a1a !important;
+    transform: scale(1.05); /* Pequeño efecto de zoom */
+}
