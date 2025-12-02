@@ -1,85 +1,157 @@
+/* =========================================
+   DISEÑO HERO PREMIUM - TRANSPORTE ZAFE
+   ========================================= */
+
 .hero {
-  width: 100%;
-  height: 90vh; /* Altura del hero */
-  background-size: cover;
-  background-position: center;
   position: relative;
-  
-  /* FLEXBOX MÁGICO PARA MOVER TODO A LA DERECHA */
+  height: 85vh; /* Un poco menos de altura para ver que hay más contenido abajo */
+  width: 100%;
   display: flex;
-  align-items: center;    /* Centrado vertical */
-  justify-content: flex-end; /* Alineación horizontal a la DERECHA */
+  align-items: center;
+  /* Alineamos el contenido a la derecha */
+  justify-content: flex-end; 
+  overflow: hidden;
 }
 
-/* Capa oscura (Overlay) */
-.hero::before {
-  content: '';
+/* LA MAGIA: Fondo con imagen + Gradiente lateral */
+/* Esto oscurece solo la parte derecha donde va el texto */
+.hero-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* Oscuridad al 40% */
-  z-index: 1;
+  background-image: 
+    linear-gradient(90deg, 
+      rgba(26,26,46,0) 0%,      /* Izquierda: Transparente (se ve el camión) */
+      rgba(26,26,46,0.6) 40%,    /* Medio: Empieza a oscurecer */
+      rgba(26,26,46,0.95) 100%   /* Derecha: Oscuro sólido para el texto */
+    ),
+    url('/img/heroimage.jpg');
+  background-size: cover;
+  background-position: center left; /* Enfocamos la parte izquierda de la foto (el camión) */
+  z-index: 0;
 }
 
+/* Contenedor del Texto */
 .hero-content {
   position: relative;
   z-index: 2;
-  color: #ffffff;
-  
-  /* CONFIGURACIÓN DEL TEXTO */
-  text-align: right;    /* Texto alineado a la derecha */
-  max-width: 600px;     /* Ancho máximo restringido para no tapar el camión */
-  margin-right: 8%;     /* Margen desde el borde derecho */
-  padding: 20px;
+  width: 45%; /* Ocupa un poco menos de la mitad derecha */
+  padding-right: 8%; /* Margen desde el borde derecho */
+  padding-left: 2rem;
+  color: #fff;
+  text-align: left; /* Alineación izquierda DENTRO del bloque derecho se lee mejor */
 }
 
-.hero-title {
-  font-size: 2.8rem;    /* Letra más chica (antes era gigante) */
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  font-weight: 400;
-  opacity: 0.95;
-}
-
-.hero-btn {
+/* Pequeña etiqueta superior */
+.hero-tag {
   display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFC107; /* Amarillo de la marca */
+  margin-bottom: 1rem;
+  border-left: 3px solid #FFC107;
+  padding-left: 10px;
+}
+
+/* Título Principal */
+.hero-title {
+  font-size: 3rem; /* Tamaño grande pero no gigante */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Span para destacar palabras */
+.hero-highlight {
+  color: #fff; /* Blanco puro */
+  position: relative;
+}
+/* Subrayado sutil amarillo en "Tucumán" */
+.hero-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #FFC107;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* Subtítulo */
+.hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+  font-weight: 300;
+}
+
+/* Botón Rediseñado */
+.hero-btn {
   background-color: #FFC107;
   color: #1a1a1a;
-  padding: 12px 30px;
-  border-radius: 50px;
+  padding: 14px 35px;
   font-weight: 700;
+  font-size: 1rem;
+  border-radius: 4px; /* Bordes menos redondeados = más industrial/serio */
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
 }
 
 .hero-btn:hover {
-  background-color: #e0a800;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+  background-color: #fff; /* Al pasar el mouse se pone blanco */
+  transform: translateY(-2px);
 }
 
-/* RESPONSIVE: En celular volvemos al centro */
-@media (max-width: 768px) {
+/* =========================================
+   RESPONSIVE (Móvil)
+   ========================================= */
+@media (max-width: 968px) {
   .hero {
-    justify-content: center; /* Centrado en móvil */
+    justify-content: center;
+    align-items: flex-end; /* Texto abajo */
+    height: 90vh;
   }
-  
+
+  .hero-background {
+    background-position: center;
+    /* En celular cambiamos el gradiente: de abajo hacia arriba */
+    background-image: 
+      linear-gradient(0deg, 
+        rgba(26,26,46,1) 0%, 
+        rgba(26,26,46,0.8) 40%,
+        rgba(26,26,46,0) 100%
+      ),
+      url('/img/heroimage.jpg');
+  }
+
   .hero-content {
-    text-align: center;      /* Texto centrado */
-    margin-right: 0;         /* Sin margen derecho */
-    max-width: 90%;          /* Ocupa casi todo el ancho */
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 4rem; /* Subir un poco el texto */
   }
-  
+
+  .hero-tag {
+    border-left: none;
+    border-bottom: 2px solid #FFC107;
+    padding-bottom: 5px;
+    padding-left: 0;
+  }
+
   .hero-title {
-    font-size: 2rem;         /* Título más chico en celular */
+    font-size: 2.2rem;
   }
 }
