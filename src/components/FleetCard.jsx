@@ -1,6 +1,7 @@
 import React from 'react';
+import { Weight } from 'lucide-react'; // Icono de peso
 
-export default function FleetCard({ image, title, desc }) {
+export default function FleetCard({ image, title, desc, capacity }) {
   return (
     <div className="fleet-card">
       <div className="fleet-img-container">
@@ -13,7 +14,15 @@ export default function FleetCard({ image, title, desc }) {
       </div>
       <div className="fleet-info">
         <h3>{title}</h3>
-        <p>{desc}</p>
+        <p className="fleet-desc">{desc}</p>
+        
+        {/* Nueva sección de Especificaciones */}
+        {capacity && (
+          <div className="fleet-specs">
+            <Weight size={18} />
+            <span>{capacity}</span>
+          </div>
+        )}
       </div>
     </div>
   );
