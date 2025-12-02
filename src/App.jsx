@@ -5,7 +5,9 @@ import About from './components/About';
 import Fleet from './components/Fleet';
 import Services from './components/Services';
 import Footer from './components/Footer';
-import WhatsAppBtn from './components/WhatsAppBtn'; // Importamos el botón
+import WhatsAppBtn from './components/WhatsAppBtn'; 
+import Clients from './components/Clients';
+// Importamos el botón
 
 function App() {
   return (
@@ -15,6 +17,7 @@ function App() {
       <About />
       <Fleet />
       <Services />
+      <Clients />
       <Footer />
       <WhatsAppBtn /> {/* Lo añadimos aquí para que flote sobre todo */}
     </div>

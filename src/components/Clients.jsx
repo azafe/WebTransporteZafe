@@ -14,9 +14,7 @@ const Clients = () => {
     <section className="clients-section">
       <div className="container">
         <h3 className="clients-title">Empresas que confían en nosotros</h3>
-        <p className="clients-subtitle">
-          15 años impulsando el desarrollo de las industrias líderes del Norte.
-        </p>
+     
         
         <div className="clients-grid">
           {clients.map((client, index) => (
