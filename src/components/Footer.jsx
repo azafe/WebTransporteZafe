@@ -23,7 +23,7 @@ export default function Footer() {
             <p style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '5px', fontWeight: 'bold'}}>
               <MapPin size={20} color="#eab308"/> Ubicación
             </p>
-            <p style={{marginLeft: '30px'}}>San Miguel de Tucumán, Argentina</p>
+            <p style={{marginLeft: '30px'}}>Ing. La Florida, Tucumán, Argentina</p>
           </div>
 
           <div style={{marginBottom: '15px'}}>

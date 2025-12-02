@@ -1,0 +1,97 @@
+/* =========================================
+   ESTILOS MEJORADOS DEL HERO
+   ========================================= */
+.hero {
+  /* La imagen de fondo ya debe estar configurada en línea en el JSX */
+  height: 90vh; /* Altura casi completa de la pantalla */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center; /* Centrado vertical */
+  /*justify-content: flex-end;  Alineación horizontal a la derecha */
+  position: relative;
+  padding: 0 5%; /* Un poco de margen a los costados */
+}
+
+/* Capa oscura para que el texto blanco se lea bien sobre la foto */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Oscurece al 50% */
+}
+
+/* Contenedor del texto y botón */
+.hero-content {
+  position: relative; /* Para que esté sobre la capa oscura */
+  z-index: 1;
+  color: #fff;
+  text-align: right; /* Alineación del texto a la derecha */
+  max-width: 650px; /* ¡CLAVE! Limita el ancho para no tapar el logo */
+  margin-left: auto; /* Empuja el bloque hacia la derecha */
+}
+
+/* Título principal */
+.hero-title {
+  font-size: 3rem; /* Mucho más chico y elegante que antes */
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-transform: uppercase; /* Opcional: le da fuerza */
+}
+
+/* Subtítulo */
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Botón (asumiendo que usas la misma clase que en el navbar) */
+.hero-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  /* Usamos tus colores de marca */
+  background-color: #FFC107;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
+  background-color: #e0a800;
+}
+
+/* =========================================
+   RESPONSIVE (CELULARES)
+   ========================================= */
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center; /* En celular, centramos todo */
+    text-align: center;
+    padding: 0 2rem;
+  }
+  
+  .hero-content {
+    text-align: center; /* Texto centrado en celular */
+    margin-left: 0; /* Quitamos el empuje a la derecha */
+    max-width: 100%; /* Que ocupe el ancho disponible */
+  }
+
+  .hero-title {
+    font-size: 2.2rem; /* Un tamaño más manejable para móvil */
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
